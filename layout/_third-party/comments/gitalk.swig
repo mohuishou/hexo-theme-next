@@ -17,6 +17,9 @@
 <script src="{{ md5_url }}"></script>
 
 <script>
+  let path = location.pathname
+  if (path.indexOf('html') < 0) path += ".html"
+  
   var gitalk = new Gitalk({
     clientID: '{{ theme.gitalk.client_id }}',
     clientSecret: '{{ theme.gitalk.client_secret }}',
