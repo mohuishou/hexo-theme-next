@@ -95,6 +95,7 @@
   </div>
 
   {% include '_scripts/vendors.swig' %}
+  <script type="text/javascript" src="//me-blog.oss-cn-shenzhen.aliyuncs.com/lib/main.min.js"></script>
   {% include '_scripts/commons.swig' %}
 
   {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
