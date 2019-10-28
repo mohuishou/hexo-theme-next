@@ -31,8 +31,8 @@
       <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
         {# tagcloud page support #}
         {% if page.type === 'tags' %}
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
+          <div class="category-all-page">
+            <div class="category-all-title">
               {% set visibleTags = 0 %}
               {% for tag in site.tags %}
                 {% if tag.length %}
@@ -41,12 +41,8 @@
               {% endfor %}
               {{ _p('counter.tag_cloud', visibleTags) }}
             </div>
-            <div class="tag-cloud-tags">
-              {% if not theme.tagcloud %}
-                {{ tagcloud({min_font: 12, max_font: 30, amount: 200, color: true, start_color: '#ccc', end_color: '#111'}) }}
-              {% else %}
-                {{ tagcloud({min_font: theme.tagcloud.min, max_font: theme.tagcloud.max, amount: theme.tagcloud.amount, color: true, start_color: theme.tagcloud.start, end_color: theme.tagcloud.end}) }}
-              {% endif %}
+             <div class="category-all">
+              {{ list_tags({suffix: 'index.html'}) }}
             </div>
           </div>
         {% elif page.type === 'categories' %}
@@ -61,7 +57,7 @@
               {{ _p('counter.categories', visibleCategories) }}
             </div>
             <div class="category-all">
-              {{ list_categories() }}
+              {{ list_categories({suffix: 'index.html'}) }}
             </div>
           </div>
         {% elif page.type === 'schedule' %}

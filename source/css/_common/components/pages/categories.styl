@@ -7,6 +7,8 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .category-list-item { margin: 5px 10px; }
@@ -24,4 +26,28 @@
   }
 
   .category-list-child { padding-left: 10px; }
+
+  .tag-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag-list-item { margin: 5px 10px; }
+
+  .tag-list-count {
+    color: $grey;
+    &:before {
+      display: inline;
+      content: " ("
+    }
+    &:after {
+      display: inline;
+      content: ") "
+    }
+  }
+
+  .tag-list-child { padding-left: 10px; }
 }

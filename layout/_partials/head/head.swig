@@ -69,7 +69,7 @@
 {% endif %}
 <link rel="stylesheet" href="{{ font_awesome_uri }}"/>
 
-<link rel="stylesheet" href="https://me-blog.oss-cn-shenzhen.aliyuncs.com/lib/main.min.css?v={{ version }}"/>
+<link rel="stylesheet" href={{ url_for('/assets/main.min.css') }}?v={{ version }}"/>
 
 {% if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">
